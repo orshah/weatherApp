@@ -1,5 +1,7 @@
 import React from "react";
 import "./weatherCard.style.css";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function WeatherCard(props) {
   const {
@@ -15,42 +17,46 @@ function WeatherCard(props) {
     iconId,
     minTemp,
     maxTemp,
+    pressure,
   } = props;
   console.log(iconId);
   return (
     <>
       <div className="inputBtn">
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Search for city"
+          variant="outlined"
           placeholder="Search for city"
           onChange={onChange}
           value={value}
         />
-        <button onClick={onClick}>Get the weather</button>
+        <Button onClick={onClick} variant="outlined">
+          Get the weather
+        </Button>
       </div>
       <div className="weather-card">
         <div className="cityIcon">
           <h1>{city}</h1>
-          <p>{temperature} F</p>
+          <p className="tempNum">{temperature.toFixed(0)} ‎°F</p>
           <img
             src={`https://openweathermap.org/img/wn/${iconId}@2x.png`}
             alt="icon"
           />
-          <p>Min{minTemp}</p>
-          <p>Max{maxTemp}</p>
+          <p>Low: {minTemp.toFixed(0)} ‎°F</p>
+          <p>High: {maxTemp.toFixed(0)} ‎°F</p>
         </div>
-        <div className="feelsLike">
+        <div className="feelsLikeContainer">
           <p>{description}</p>
-          <p>Feels like: {feelsLikeTemp}</p>
+          <p className="flsLike"> Feels like: {feelsLikeTemp.toFixed(0)} ‎°F</p>
         </div>
-        <div className="infoList">
-          <ul>
-            <li>Humidity: {humidity}</li>
-            <li>Wind Speed: {wind}</li>
-            <li>Humidity: {humidity}</li>
-            <li>Wind Speed: {wind}</li>
-            <li>Wind Speed: {wind}</li>
-          </ul>
-        </div>
+      </div>
+      <div className="infoList">
+        <ul>
+          <li>Humidity: {humidity} %</li>
+          <li>Wind Speed: {wind} mph</li>
+          <li>Pressure: {pressure} in</li>
+        </ul>
       </div>
     </>
   );

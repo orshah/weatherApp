@@ -16,6 +16,7 @@ function WeatherApp() {
   const [icon, setIcon] = useState("");
   const [minTemp, setminTemp] = useState(0);
   const [maxTemp, setmaxTemp] = useState(0);
+  const [pressure, setPressure] = useState(0);
 
   const onClickHandler = async () => {
     console.log("search", searchCity);
@@ -35,7 +36,8 @@ function WeatherApp() {
       setCity(data.name);
       setIcon(data.weather[0].icon);
       setminTemp(data.main.temp_min);
-      setminTemp(data.main.temp_max);
+      setmaxTemp(data.main.temp_max);
+      setPressure(data.main.pressure);
     } catch (error) {
       console.log("error");
     }
@@ -60,6 +62,7 @@ function WeatherApp() {
         wind={wind}
         value={searchCity}
         iconId={icon}
+        pressure={pressure}
       />
     </div>
   );
