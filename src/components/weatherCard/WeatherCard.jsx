@@ -47,7 +47,7 @@ function WeatherCard(props) {
           <p>High: {maxTemp.toFixed(0)} ‎°F</p>
         </div>
         <div className="feelsLikeContainer">
-          <p>{description}</p>
+          <p>{description.toUpperCase()}</p>
           <p className="flsLike"> Feels like: {feelsLikeTemp.toFixed(0)} ‎°F</p>
         </div>
       </div>
