@@ -14,6 +14,8 @@ function WeatherApp() {
   const [city, setCity] = useState("");
   const [searchCity, setSearchCity] = useState("");
   const [icon, setIcon] = useState("");
+  const [minTemp, setminTemp] = useState(0);
+  const [maxTemp, setmaxTemp] = useState(0);
 
   const onClickHandler = async () => {
     console.log("search", searchCity);
@@ -32,6 +34,8 @@ function WeatherApp() {
       setWind(data.wind.speed);
       setCity(data.name);
       setIcon(data.weather[0].icon);
+      setminTemp(data.main.temp_min);
+      setminTemp(data.main.temp_max);
     } catch (error) {
       console.log("error");
     }
@@ -42,11 +46,13 @@ function WeatherApp() {
   };
 
   return (
-    <div>
+    <div className="weather-container">
       <WeatherCard
         onClick={onClickHandler}
         onChange={onChangeHandler}
         temperature={temperature}
+        minTemp={minTemp}
+        maxTemp={maxTemp}
         city={city}
         description={description}
         feelsLikeTemp={feelsLikeTemp}

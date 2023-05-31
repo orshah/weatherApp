@@ -1,0 +1,24 @@
+.weather-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.infoList {
+  grid-column: -5 / -3;
+  grid-row: 2/3;
+  justify-self: stretch;
+}
+
+.feelsLike {
+  grid-row: 1 /3;
+  font-size: 3rem;
+}
+
+li {
+  display: inline-block;
+}
+
+.cityIcon {
+  grid-row: 1/3;
+}

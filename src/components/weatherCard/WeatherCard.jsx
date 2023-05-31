@@ -1,4 +1,5 @@
 import React from "react";
+import "./weatherCard.style.css";
 
 function WeatherCard(props) {
   const {
@@ -12,23 +13,46 @@ function WeatherCard(props) {
     onChange,
     value,
     iconId,
+    minTemp,
+    maxTemp,
   } = props;
   console.log(iconId);
   return (
-    <div>
-      <input placeholder="Enter city name" onChange={onChange} value={value} />
-      <button onClick={onClick}>Get the weather</button>
-      <h1>City: {city}</h1>
-      <p>Tempreture: {temperature} F</p>
-      <p>Description: {description}</p>
-      <p>Feels like: {feelsLikeTemp}</p>
-      <p>Humidity: {humidity}</p>
-      <p>Wind Speed: {wind}</p>
-      <img
-        src={`https://openweathermap.org/img/wn/${iconId}@2x.png`}
-        alt="icon"
-      />
-    </div>
+    <>
+      <div className="inputBtn">
+        <input
+          placeholder="Search for city"
+          onChange={onChange}
+          value={value}
+        />
+        <button onClick={onClick}>Get the weather</button>
+      </div>
+      <div className="weather-card">
+        <div className="cityIcon">
+          <h1>{city}</h1>
+          <p>{temperature} F</p>
+          <img
+            src={`https://openweathermap.org/img/wn/${iconId}@2x.png`}
+            alt="icon"
+          />
+          <p>Min{minTemp}</p>
+          <p>Max{maxTemp}</p>
+        </div>
+        <div className="feelsLike">
+          <p>{description}</p>
+          <p>Feels like: {feelsLikeTemp}</p>
+        </div>
+        <div className="infoList">
+          <ul>
+            <li>Humidity: {humidity}</li>
+            <li>Wind Speed: {wind}</li>
+            <li>Humidity: {humidity}</li>
+            <li>Wind Speed: {wind}</li>
+            <li>Wind Speed: {wind}</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 }
 
