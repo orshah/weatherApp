@@ -25,6 +25,7 @@ function WeatherCard(props) {
       <div className="inputBtn">
         <TextField
           id="outlined-basic"
+          className="outlined-basic"
           label="Search for city"
           variant="outlined"
           placeholder="Search for city"

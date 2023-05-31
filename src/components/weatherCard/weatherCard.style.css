@@ -15,6 +15,8 @@
   justify-self: center;
   align-self: center;
   font-family: "Jost", sans-serif;
+  color: azure;
+  margin-right: 5px;
 }
 
 ul {
@@ -26,6 +28,7 @@ ul {
   list-style-type: none;
   font-family: "Jost", sans-serif;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  color: azure;
 }
 
 .cityIcon {
@@ -33,6 +36,10 @@ ul {
   justify-self: center;
   align-self: center;
   font-family: "Jost", sans-serif;
+  color: azure;
+}
+h1 {
+  color: rgb(46, 45, 45);
 }
 
 .inputBtn {
@@ -45,6 +52,7 @@ ul {
   font-family: "Jost", sans-serif;
   font-size: 3rem;
   font-weight: bold;
+  color: azure;
 }
 
 img {
@@ -53,4 +61,8 @@ img {
 
 .flsLike {
   font-size: 1rem;
+}
+
+.outlined-basic {
+  width: 27rem;
 }
