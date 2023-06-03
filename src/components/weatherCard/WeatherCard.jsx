@@ -2,6 +2,8 @@ import React from "react";
 import "./weatherCard.style.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { getTodayDay } from "../../utils/helperFunctions";
+import { monthName } from "../../utils/helperFunctions";
 
 function WeatherCard(props) {
   const {
@@ -20,6 +22,7 @@ function WeatherCard(props) {
     pressure,
   } = props;
   console.log(iconId);
+
   return (
     <>
       <div className="inputBtn">
@@ -50,6 +53,8 @@ function WeatherCard(props) {
         <div className="feelsLikeContainer">
           <p>{description.toUpperCase()}</p>
           <p className="flsLike"> Feels like: {feelsLikeTemp.toFixed(0)} ‎°F</p>
+          <p>Happy {getTodayDay()}</p>
+          <p>It is {monthName()}</p>
         </div>
       </div>
       <div className="infoList">
