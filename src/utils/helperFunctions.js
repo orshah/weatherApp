@@ -2,6 +2,9 @@ export const getTodayDay = () => {
   let dayOfWeek = new Date().getDay();
 
   switch (dayOfWeek) {
+    case 0:
+      dayOfWeek = "Sunday";
+      break;
     case 1:
       dayOfWeek = "Monday";
       break;
@@ -20,8 +23,8 @@ export const getTodayDay = () => {
     case 6:
       dayOfWeek = "Saturday";
       break;
-    case 7:
-      dayOfWeek = "Sunday";
+    default:
+      dayOfWeek = "Invalid Day";
   }
   return dayOfWeek;
 };
@@ -66,6 +69,8 @@ export const monthName = () => {
     case 11:
       month = "December";
       break;
+    default:
+      month = "Invalid Month";
   }
   return month;
 };
