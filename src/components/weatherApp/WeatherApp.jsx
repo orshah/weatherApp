@@ -12,7 +12,7 @@ function WeatherApp() {
   const [humidity, setHumidity] = useState(0);
   const [wind, setWind] = useState(0);
   const [city, setCity] = useState("");
-  const [searchCity, setSearchCity] = useState("Omaha");
+  const [searchCity, setSearchCity] = useState("Chicago");
   const [icon, setIcon] = useState("");
   const [minTemp, setminTemp] = useState(0);
   const [maxTemp, setmaxTemp] = useState(0);
