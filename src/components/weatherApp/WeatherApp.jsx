@@ -1,6 +1,6 @@
 import axios from "axios";
 import "./weatherApp.style.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import WeatherCard from "../weatherCard/WeatherCard";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
