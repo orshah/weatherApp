@@ -1,21 +1,17 @@
 import React from "react";
 import "./weatherCard.style.css";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+
 import { getTodayDay } from "../../utils/helperFunctions";
 import { monthName } from "../../utils/helperFunctions";
 
 function WeatherCard(props) {
   const {
-    onClick,
     city,
     temperature,
     description,
     feelsLikeTemp,
     humidity,
     wind,
-    onChange,
-    value,
     iconId,
     minTemp,
     maxTemp,
@@ -25,20 +21,6 @@ function WeatherCard(props) {
 
   return (
     <>
-      <div className="inputBtn">
-        <TextField
-          id="outlined-basic"
-          className="outlined-basic"
-          label="Search for city"
-          variant="outlined"
-          placeholder="Search for city"
-          onChange={onChange}
-          value={value}
-        />
-        <Button onClick={onClick} variant="outlined">
-          Get the weather
-        </Button>
-      </div>
       <div className="weather-card">
         <div className="cityIcon">
           <h1>{city}</h1>
